@@ -21,13 +21,10 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
-<<<<<<< HEAD
   assets:
      - assets/images/
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
-=======
 
->>>>>>> 8d704d329f5fada467ff0bfdc922d5ef5026af6f
   uses-material-design: true
