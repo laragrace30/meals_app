@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:meals_app/widget/maindrawer.dart';
 
 class Categories extends StatelessWidget {
-  const Categories({Key? key});
+  const Categories({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,6 @@ class Categories extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: const Color(0xFFFFCC00),
-      appBar: AppBar(backgroundColor: const Color(0xFFFFCC00)),
-      drawer: const MainDrawer(),
       body: SafeArea(
         child: Stack(
           children: [
@@ -35,6 +33,37 @@ class Categories extends StatelessWidget {
                  fontSize: 24,
                  fontWeight: FontWeight.w200 
                 )),
+                const SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal:70),
+                  child: Container(
+                    height: 34,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white
+                    ),
+                    child: const Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(top:8, left:8, bottom:8),
+                          child: Icon(
+                            Icons.search,
+                            color: Colors.black,
+                          ),
+                        ),
+                        SizedBox(width: 6),
+                        Text(
+                          'Search',
+                          style: TextStyle(
+                            color: Color(0xFF868686),
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 20),
                 Column(
                   children: [
