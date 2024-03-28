@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:meals_app/widget/maindrawer.dart';
+import 'package:meals_app/widget/category_container.dart';
 
 class Categories extends StatelessWidget {
   const Categories({super.key});
@@ -19,34 +19,32 @@ class Categories extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            ListView(
-              physics: const BouncingScrollPhysics(),
-               children: [
-                Image.asset(
-                  'assets/images/yummersLogo 1.png',
-                  height: 110,
-                ),
-                const Text('What to eat?',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                 color: Color(0xFF277BC0),
-                 fontSize: 24,
-                 fontWeight: FontWeight.w200 
-                )),
-                const SizedBox(height: 20),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal:70),
-                  child: Container(
+            ListView(physics: const BouncingScrollPhysics(),
+             children: [
+              Image.asset(
+                'assets/images/yummersLogo 1.png',
+                height: 110,
+              ),
+              const Text('What to eat?',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color(0xFF277BC0),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w200)),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
                     height: 34,
-                    width: 100,
+                    width: 230,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white
-                    ),
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white),
                     child: const Row(
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(top:8, left:8, bottom:8),
+                          padding: EdgeInsets.only(top: 8, left: 8, bottom: 8),
                           child: Icon(
                             Icons.search,
                             color: Colors.black,
@@ -63,79 +61,86 @@ class Categories extends StatelessWidget {
                       ],
                     ),
                   ),
-                ),
-                const SizedBox(height: 20),
-                Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          height: 140,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                        Container(
-                          height: 140,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          height: 140,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                        Container(
-                          height: 140,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            color: Colors.yellow,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          height: 140,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            color: Colors.orange,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                        Container(
-                          height: 140,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            color: Colors.purple,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                      ],
-                    ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.filter_alt),
+                    color: Colors.black,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              const Padding(
+                padding: EdgeInsets.only(left:8, top: 8,bottom:5),
+                child: Text('Suggested',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black
+                )),
+              ),
+              SizedBox(
+                height: 123,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  physics: const BouncingScrollPhysics(),
+                  children: const [
+                    CategoryContainer(
+                        imagePath: 'assets/images/Rectangle 4.png'),
+                    CategoryContainer(
+                        imagePath: 'assets/images/Rectangle 5.png'),
+                    CategoryContainer(
+                        imagePath: 'assets/images/Rectangle 6.png'),
                   ],
                 ),
-              ]
-            ),
+              ),
+              const SizedBox(height: 10),
+              const Padding(
+                padding: EdgeInsets.only(left:8, top: 8,bottom:5),
+                child: Text('Filipino Foods',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black
+                )),
+              ),
+              SizedBox(
+                height: 123,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  physics: const BouncingScrollPhysics(),
+                  children: const [
+                    CategoryContainer(
+                        imagePath: 'assets/images/Rectangle 7.png'),
+                    CategoryContainer(
+                        imagePath: 'assets/images/Rectangle 8.png'),
+                    CategoryContainer(
+                        imagePath: 'assets/images/Rectangle 6.png'),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
+              const Padding(
+                padding: EdgeInsets.only(left:8, top: 8,bottom:5),
+                child: Text('Your Favorites',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black
+                )),
+              ),
+              SizedBox(
+                height: 123,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  physics: const BouncingScrollPhysics(),
+                  children: const [
+                    CategoryContainer(
+                        imagePath: 'assets/images/Rectangle 7.png'),
+                    CategoryContainer(
+                        imagePath: 'assets/images/Rectangle 8.png'),
+                    CategoryContainer(
+                        imagePath: 'assets/images/Rectangle 6.png'),
+                  ],
+                ),
+              ),
+            ]),
           ],
         ),
       ),
